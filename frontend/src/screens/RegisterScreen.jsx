@@ -30,13 +30,15 @@ const RegisterScreen = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    console.log("urrr", process.env.VITE_API_URL);
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
     } else {
       try {
+        console.log("name", name);
         const res = await register({ name, email, password }).unwrap();
-        console.log(res);
+        console.log("rrrr", res);
         dispatch(setCredentials({ ...res }));
         navigate("/");
       } catch (err) {
