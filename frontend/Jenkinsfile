@@ -26,7 +26,7 @@
         stage("install packages")
         {
             steps{
-                "sh npm install"
+                sh "npm install"
             }
         }
         stage("trivy scan")
