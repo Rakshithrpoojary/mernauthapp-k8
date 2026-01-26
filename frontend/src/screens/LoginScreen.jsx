@@ -19,11 +19,11 @@ const LoginScreen = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
   console.log(userInfo);
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     navigate('/');
-  //   }
-  // }, [navigate, userInfo]);
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
