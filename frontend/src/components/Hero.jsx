@@ -1,5 +1,4 @@
 import { Container, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -13,8 +12,8 @@ const Hero = () => {
             Bootstrap library
           </p>
           <div className="d-flex">
-            <Button variant="primary" className="me-3">
-              <Link to="/login">Sign In</Link>
+            <Button variant="primary" href="/login" className="me-3">
+              Sign In
             </Button>
             <Button variant="secondary" href="/register">
               Register
