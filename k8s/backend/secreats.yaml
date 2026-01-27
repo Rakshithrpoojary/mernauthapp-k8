@@ -7,4 +7,4 @@ type: Opaque
 data:
   password: YWRtaW4xMjMK
   username: YWRtaW4=
-  jwt-secreat: Z2hmZ2hkdGR0cnRyZ2ZnZmdmCg==
+  jwtsecreat: Z2hmZ2hkdGR0cnRyZ2ZnZmdmCg==

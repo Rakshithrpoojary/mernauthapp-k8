@@ -45,7 +45,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: backend-sec           
-                  key: jwt-secreat 
+                  key: jwtsecreat 
             - name: MONGO_USERNAME
               valueFrom:
                 secretKeyRef:
