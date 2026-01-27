@@ -6,4 +6,4 @@ metadata:
 data:
   mongo_url: "mongodb://mongodb-svc:27017"
   node_env: production
-  port: 5000
+  port: "5000"
