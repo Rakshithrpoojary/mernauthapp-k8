@@ -44,17 +44,17 @@ spec:
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: backend-sec           
-                  key: jwtsecreat 
+                  name: backend-sec
+                  key: jwtsecreat
             - name: MONGO_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: backend-sec           
+                  name: backend-sec
                   key: username
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: backend-sec        s   
+                  name: backend-sec 
                   key: password
           ports:
             - containerPort: 3000
