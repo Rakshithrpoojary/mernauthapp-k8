@@ -29,7 +29,7 @@ spec:
             - name: REACT_APP_BACKEND_URL
               valueFrom:
                 configMapKeyRef:
-                  name: backend_url           
+                  name: backend-url           
                   key: React_app_backend_url 
           ports:
             - containerPort: 3000
