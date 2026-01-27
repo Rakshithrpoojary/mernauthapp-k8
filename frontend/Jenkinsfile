@@ -95,6 +95,7 @@
         }
 stage('Commit & Push to Git') {
       steps {
+      withCredentials([gitUsernamePassword(credentialsId: 'git-cred', gitToolName: 'Default')]) {
         sh """
           git config user.name "Rakshith"
           git config user.email "poojaryrakshith986@gmail.com"
@@ -102,6 +103,7 @@ stage('Commit & Push to Git') {
           git commit -m "Update frontend image to ${BUILD_NUMBER} [ci skip]"
           git push origin HEAD --push-option=ci.skip
         """
+      }
       }
     }
 
