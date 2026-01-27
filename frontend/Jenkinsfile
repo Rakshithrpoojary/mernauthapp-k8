@@ -26,7 +26,11 @@
         stage("install packages")
         {
             steps{
+                dir("frontend")
+                {
                 sh "npm install"
+
+                }
             }
         }
         stage("trivy scan")
