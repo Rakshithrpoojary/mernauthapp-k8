@@ -4,6 +4,6 @@ metadata:
   name: backend-cm
   namespace: ecommerce
 data:
-  mongo_url: "mongodb://mongodb-svc:27017"
+  mongo_url: "mongodb://mongodb-svc:27017/ecommerce"
   node_env: production
   port: "5000"
