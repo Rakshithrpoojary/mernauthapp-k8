@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata: 
+  namespace: ecommerce
+  name: backend_sec
+type: Opaque
+data:
+  password: YWRtaW4xMjMK
+  username: YWRtaW4=
+  jwt_secreat: Z2hmZ2hkdGR0cnRyZ2ZnZmdmCg==

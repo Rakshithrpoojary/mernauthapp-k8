@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: ecommerce
+  labels:
+    role: backend
+    env: demo
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      role: backend
+  template:
+    metadata:
+      labels:
+        role: backend
+    spec:
+      containers:
+        - name: backend
+          image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/backend:5
+          imagePullPolicy: Always
+          env:
+            - name: MONGO_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: backend_cm           
+                  key: mongo_url 
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: backend_cm           
+                  key: node_env
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: backend_cm           
+                  key: port
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: backend_sec           
+                  key: jwt_secreat 
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: backend_sec           
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: backend_sec           
+                  key: password
+          ports:
+            - containerPort: 3000

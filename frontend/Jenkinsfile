@@ -86,6 +86,24 @@
                 }
             }
         }
+        stage('Update Deployment YAML file') {
+            steps {
+                sh """
+                sed -i 's|image: .*|image: ${REPOSITORY_URI}${AWS_ECR_REPO_NAME}:${BUILD_NUMBER}|g' k8s/frontend/deployment.yaml
+                """
+            }
+        }
+stage('Commit & Push to Git') {
+      steps {
+        sh """
+          git config user.name "Rakshith"
+          git config user.email "poojaryrakshith986@gmail.com"
+          git add k8s/frontend/deployment.yaml
+          git commit -m "Update frontend image to ${BUILD_NUMBER} [ci skip]"
+          git push origin HEAD --push-option=ci.skip
+        """
+      }
+    }
 
     }
 }
