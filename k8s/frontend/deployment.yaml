@@ -26,10 +26,10 @@ spec:
           image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecommerce:19
           imagePullPolicy: Always
           env:
-            - name: REACT_APP_BACKEND_URL
+            - name: VITE_API_URL
               valueFrom:
                 configMapKeyRef:
                   name: backend-url           
                   key: React_app_backend_url 
           ports:
-            - containerPort: 3000
+            - containerPort: 80
