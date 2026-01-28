@@ -13,12 +13,6 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://a878c0ab065554ced9887da7d36cc186-1453189314.ap-south-1.elb.amazonaws.com",
-    credentials: true,
-  })
-);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
