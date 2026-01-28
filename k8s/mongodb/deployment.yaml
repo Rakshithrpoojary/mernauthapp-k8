@@ -3,16 +3,16 @@ kind: Deployment
 metadata: 
   namespace: ecommerce
   name: mongodb
-spec: 
+spec:
   replicas: 1
   selector:
     matchLabels:
       app: mongodb
   template:
     metadata:
-      labels: 
+      labels:
         app: mongodb
-    spec: 
+    spec:
       containers:
       - name: mon
         image: mongo:4.4.6
