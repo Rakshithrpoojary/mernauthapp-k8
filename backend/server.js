@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 app.use(
   cors({
-    origin: "http://3.110.132.160",
+    origin: "http://a878c0ab065554ced9887da7d36cc186-1453189314.ap-south-1.elb.amazonaws.com",
     credentials: true,
   })
 );
