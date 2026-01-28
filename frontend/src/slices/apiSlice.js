@@ -5,7 +5,7 @@ import { fetchBaseQuery, createApi } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://a6d35c9945ce542ad962db7d36ba636d-1979400558.ap-south-1.elb.amazonaws.com:80",
+    baseUrl: import.meta.env.VITE_API_URL,
     credentials: "include",
   }),
   tagTypes: ["User"],
