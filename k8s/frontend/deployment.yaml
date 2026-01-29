@@ -7,12 +7,12 @@ metadata:
     role: frontend
     env: demo
 spec:
-  replicas: 3
+  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1
-      maxUnavailable: 25%
+      maxUnavailable: 1
   selector:
     matchLabels:
       role: frontend
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecommerce:34
+          image: 050305920682.dkr.ecr.ap-south-1.amazonaws.com/ecommerce:30
           imagePullPolicy: Always
           env:
             - name: VITE_API_URL
