@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 
 COPY . .
-ENV VITE_API_URL=http://k8s-ecommerc-mainlb-50fe372e3b-1026830903.ap-south-1.elb.amazonaws.com/
+ENV VITE_API_URL=http://k8s-ecommerc-mainlb-50fe372e3b-1026830903.ap-south-1.elb.amazonaws.com
 RUN npm run build
 
 FROM nginx:alpine
