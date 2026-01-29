@@ -3,7 +3,7 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 COPY . .
 ENV VITE_API_URL=http://k8s-ecommerc-mainlb-50fe372e3b-1026830903.ap-south-1.elb.amazonaws.com
